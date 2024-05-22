@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
 end
 
 Save the Vagrantfile and run the following command to start the Vagrant environment:
-
+Démarrer un session ssh :
 vagrant up
 
 Vagrant will download the CentOS 8 box from Vagrant Cloud and start the virtual machine. It may take some time depending on your internet speed.
@@ -49,5 +49,15 @@ Attendez que la machine virtuelle soit prête. Une fois que la machine est prêt
 Notez que cet exemple utilise une machine virtuelle CentOS 7 avec Apache et MySQL. Vous pouvez ajuster le fichier Vagrantfile en fonction de vos préférences en termes de système d'exploitation et de serveur web.
 
 source : https://github.com/glpi-project/
+
+Configure LDAP for GLPI :
+
+Configure LDAP for GLPI. GLPI supports various LDAP servers, including OpenLDAP and Active Directory. You will need to configure the LDAP settings in the GLPI configuration file. The configuration file is usually located at /etc/glpi/config.php. 
+Here are the general steps to configure LDAP in GLPI
+Open the config.php file in a text editor.
+Locate the section that starts with $config["ldap_enabled"].
+Set $config["ldap_enabled"] to true.
+Configure the LDAP server settings such as host, port, base DN, and authentication details.
+Set up the GLPI database. GLPI requires a MySQL or MariaDB database to store its data. You will need to create a database and user for GLPI, and configure the database connection settings in the config.php file.
 
 
